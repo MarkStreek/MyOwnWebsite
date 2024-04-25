@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from "next/link";
+import {ThemeSwitcher} from "@/app/components/ThemeSwitch";
 
 /**
  * Function that return the Sidebar component.
@@ -16,14 +17,19 @@ export default function Sidebar() {
                 <Link href="/"><span className="text-2xl font-extrabold">Mark Van de Streek</span></Link>
             </div>
             <nav>
-                <ul className="space-y-3">
+                <ul>
                     <li>
-                        <Link href="/projects"
-                              className="text-gray-300 hover:bg-gray-700 hover:text-white px-2 py-3 rounded-md">Projects</Link>
+                        <Link href="/projects">
+                            <p className="text-gray-300 hover:bg-gray-700 hover:text-white p-2 rounded-md">Projects</p>
+                        </Link>
                     </li>
                     <li>
-                        <Link href="/resume"
-                              className="text-gray-300 hover:bg-gray-700 hover:text-white px-2 py-3 rounded-md">Resumé</Link>
+                        <Link href="/resume">
+                            <p className="text-gray-300 hover:bg-gray-700 hover:text-white p-2 rounded-md">Resumé</p>
+                        </Link>
+                    </li>
+                    <li>
+                        <ThemeSwitcher/>
                     </li>
                 </ul>
                 <ul className="flex space-x-1 fixed bottom-0 mb-4">

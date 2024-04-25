@@ -1,11 +1,21 @@
+"use client";
+
 import { Blockquote } from "flowbite-react";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosMail } from "react-icons/io";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
+import { useTheme} from "next-themes";
+
 
 export default function Home() {
+    const {theme} = useTheme();
+
+    const blockquoteClass = theme === 'dark'
+        ? "my-4 border-l-4 border-gray-700 bg-gray-900 p-4 text-gray-300 font-mono text-1xl"
+        : "my-4 border-l-4 border-gray-300 bg-gray-50 p-4 text-gray-700 font-mono text-1xl";
+
   return (
       <div className="xs:mt-10 sm:mt-10 md:mt-0">
           <div className="md:flex gap-4">
@@ -35,7 +45,7 @@ export default function Home() {
                   </p>
               </div>
           </div>
-          <Blockquote className="my-4 border-l-4 border-gray-300 bg-gray-50 p-4 text-gray-700 font-mono text-1xl">
+          <Blockquote className={blockquoteClass}>
               I like to create software and websites that are useful and user-friendly. Additionally I enjoy researching
               biological issues or questions.
               In the last couple of years, I gained experience in programming languages like Java, Python, JavaScript
