@@ -28,8 +28,7 @@ export function ThemeSwitcher() {
     if (theme === 'light') {
         return (
             <div onClick={() => setTheme('dark')} className="flex hover:bg-gray-700 rounded-md">
-                <p className="text-gray-300 hover:text-white p-2 rounded-md">Change
-                    Theme</p>
+                <p className="text-gray-300 hover:text-white p-2 rounded-md">Theme</p>
                 <FiMoon className="w-4 h-4 mt-3" />
             </div>
         );
