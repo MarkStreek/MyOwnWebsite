@@ -38,7 +38,7 @@ export default function Home() {
                       Sciences in
                       Groningen, where I study Bioinformatics.
                       {/* eslint-disable-next-line react/no-unescaped-entities */}
-                      Currently, I am in my third year of the bachelor's degree. I am passionate about programming and I
+                       Currently, I am in my third year of the bachelor's degree. I am passionate about programming and I
                       am always
                       looking for new challenges.
                       <br/>
