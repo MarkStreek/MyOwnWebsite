@@ -29,7 +29,7 @@ export function ThemeSwitcher() {
         return (
             <div onClick={() => setTheme('dark')} className="flex hover:bg-gray-700 rounded-md">
                 <p className="text-gray-300 hover:text-white p-2 rounded-md">Theme</p>
-                <FiMoon className="w-4 h-4 mt-3" />
+                <FiMoon className="w-4 h-4 mt-3 mr-2" />
             </div>
         );
     }

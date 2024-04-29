@@ -37,8 +37,8 @@ export default function Home() {
                       My name is Mark van de Streek and I am 21 years old. I am a student at the University of Applied
                       Sciences in
                       Groningen, where I study Bioinformatics.
-                      {/* eslint-disable-next-line react/no-unescaped-entities */}
-                       Currently, I am in my third year of the bachelor's degree. I am passionate about programming and I
+
+                      Currently, I am in my third year of the bachelor's degree. I am passionate about programming and I
                       am always
                       looking for new challenges.
                       <br/>
@@ -69,12 +69,12 @@ export default function Home() {
                   My programming stats of the last 7 days
               </h5>
               <br />
-              <div className="md:flex">
-              <figure className="md:w-1/2 md:h-1/2 xs:w-full xs:h-1/2 sm:w-full sm:h-1/2">
+              <div className="md:flex gap-3">
+              <figure className="md:w-1/2 md:h-1/2 xs:w-full xs:h-1/2 sm:w-full sm:h-1/2 border-2 rounded-md">
                   <embed
                       src="https://wakatime.com/share/@018c4f64-612c-4de6-a00a-d1fa998cd7e1/5c34c540-8e6f-4645-8ae8-e0759b6e2dd3.svg"></embed>
               </figure>
-              <figure className="md:w-1/2 md:h-1/2 xs:w-full xs:h-1/2 sm:w-full sm:h-1/2">
+              <figure className="md:w-1/2 md:h-1/2 xs:w-full xs:h-1/2 sm:w-full sm:h-1/2 border-2 rounded-md">
                   <embed
                       src="https://wakatime.com/share/@018c4f64-612c-4de6-a00a-d1fa998cd7e1/0d1183e5-b34e-4c0e-966c-bbdc31ab81e0.svg"></embed>
               </figure>
