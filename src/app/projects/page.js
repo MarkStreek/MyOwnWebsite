@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Card } from "flowbite-react";
+import { Card } from "flowbite-react";
+import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiSpringboot, SiRstudio, SiPrometheus, SiLatex} from "react-icons/si";

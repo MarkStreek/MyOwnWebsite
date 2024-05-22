@@ -1,5 +1,6 @@
 import React from 'react';
-import { List, Button } from "flowbite-react";
+import { List } from "flowbite-react";
+import { Button } from "@nextui-org/react";
 import { FaJava } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiMysql } from "react-icons/si";

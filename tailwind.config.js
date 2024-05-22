@@ -1,20 +1,20 @@
 const flowbite = require("flowbite-react/tailwind");
 
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
+import {nextui} from "@nextui-org/react";
 
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+const config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    flowbite.content(),
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+            "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
     screens: {
@@ -26,7 +26,8 @@ module.exports = {
       '2xl': '1536px',
     },
   },
-  plugins: [
-    flowbite.plugin(),
-  ],
-};
+  plugins: [nextui(), flowbite.plugin()]
+}
+
+export default config;
+

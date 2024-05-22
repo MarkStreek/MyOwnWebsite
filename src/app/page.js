@@ -8,7 +8,6 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { useTheme} from "next-themes";
 
-
 export default function Home() {
     const {theme} = useTheme();
 
