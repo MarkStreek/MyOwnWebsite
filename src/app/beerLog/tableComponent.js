@@ -8,18 +8,42 @@ import {
     Table,
     TableRow,
     TableCell,
-    Input
+    Button
 } from "@nextui-org/react";
 
 import { TextInput, Select } from "flowbite-react";
-
+import Modal from "react-modal";
 import {FaSearch} from "react-icons/fa";
 import Image from "next/image";
 
 export default function TableComponent({data}) {
 
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+        },
+    };
+
     const [filterValue, setFilterValue] = useState('');
     const hasSearchFilter = Boolean(filterValue);
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (image) => {
+        setSelectedImage(image);
+        setModalIsOpen(true);
+    };
+
+    // Function to close modal
+    const closeModal = () => {
+        setModalIsOpen(false);
+    };
 
     const filteredItems = useMemo(() => {
         let filteredBeers = [...data];
@@ -83,18 +107,6 @@ export default function TableComponent({data}) {
         return (
             <div className='flex flex-col gap-4'>
                 <div className='flex items-end justify-between gap-3'>
-                    {/*<Input*/}
-                    {/*    isClearable*/}
-                    {/*    radius={"none"}*/}
-                    {/*    variant={"underlined"}*/}
-                    {/*    className='w-full sm:max-w-[44%]'*/}
-                    {/*    placeholder='Search for a beer or rating...'*/}
-                    {/*    startContent={<FaSearch className="mr-4"/>}*/}
-                    {/*    value={filterValue}*/}
-                    {/*    onClear={() => onClear()}*/}
-                    {/*    onValueChange={onSearchChange}*/}
-                    {/*    aria-label="Search beers by title or rating"*/}
-                    {/*/>*/}
                     <TextInput
                         className="w-full sm:max-w-[44%]"
                         placeholder="Search for a beer or rating..."
@@ -129,7 +141,7 @@ export default function TableComponent({data}) {
             <Table
                 topContent={topContent}
                 color={"primary"}
-                selectionMode={"multiple"}
+                selectionMode={"none"}
                 topContentPlacement='outside'
                 bottomContent={
                     <div className='flex w-full justify-center'>
@@ -163,17 +175,37 @@ export default function TableComponent({data}) {
                         <TableRow key={item.id}>
                             <TableCell key={`${item.id}-title`}>{item.title}</TableCell>
                             <TableCell key={`${item.id}-rating`}>{item.rating}</TableCell>
-                            <TableCell key={`${item.id}-picture`}><Image
+                            <TableCell key={`${item.id}-picture`}>
+                                <div onClick={() => openModal(item.picture)}>
+                                <Image
                                 width={60}
                                 height={78}
                                 src={item.picture}
                                 alt={item.title}
                                 className="rounded-lg wborder-2 border-gray-300 dark:border-gray-700 md:block sm:hidden xs:hidden"
-                            /></TableCell>
+                            />
+                                </div>
+                                </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
             </Table>
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Image Modal"
+                style={customStyles}
+            >
+                <Image
+                    width={500}
+                    height={650}
+                    alt={"Beer"}
+                    src={selectedImage}
+                    className="rounded-lg wborder-2 border-gray-300 dark:border-gray-700"
+                />
+                <br />
+                <Button onClick={closeModal}>Close</Button>
+            </Modal>
         </div>
     );
 }
