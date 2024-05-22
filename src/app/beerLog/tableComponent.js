@@ -11,6 +11,8 @@ import {
     Input
 } from "@nextui-org/react";
 
+import { TextInput, Select } from "flowbite-react";
+
 import {FaSearch} from "react-icons/fa";
 import Image from "next/image";
 
@@ -81,23 +83,33 @@ export default function TableComponent({data}) {
         return (
             <div className='flex flex-col gap-4'>
                 <div className='flex items-end justify-between gap-3'>
-                    <Input
-                        isClearable
-                        radius={"none"}
-                        variant={"underlined"}
-                        className='w-full sm:max-w-[44%]'
-                        placeholder='Search for a beer or rating...'
-                        startContent={<FaSearch className="mr-4"/>}
+                    {/*<Input*/}
+                    {/*    isClearable*/}
+                    {/*    radius={"none"}*/}
+                    {/*    variant={"underlined"}*/}
+                    {/*    className='w-full sm:max-w-[44%]'*/}
+                    {/*    placeholder='Search for a beer or rating...'*/}
+                    {/*    startContent={<FaSearch className="mr-4"/>}*/}
+                    {/*    value={filterValue}*/}
+                    {/*    onClear={() => onClear()}*/}
+                    {/*    onValueChange={onSearchChange}*/}
+                    {/*    aria-label="Search beers by title or rating"*/}
+                    {/*/>*/}
+                    <TextInput
+                        className="w-full sm:max-w-[44%]"
+                        placeholder="Search for a beer or rating..."
                         value={filterValue}
+                        onChange={(e) => onSearchChange(e.target.value)}
+                        clearButton
                         onClear={() => onClear()}
-                        onValueChange={onSearchChange}
+                        addon={FaSearch()}
                         aria-label="Search beers by title or rating"
-                    />
+                    ></TextInput>
                 </div>
                 <div className="flex justify-between items-center">
                     <label className="flex items-center text-default-400 text-small">
                         Aantal rijen per pagina:&nbsp;
-                        <select
+                        <Select
                             className="bg-transparent outline-none text-default-400 text-small"
                             onChange={onRowsPerPageChange}
                             aria-label="Rows per page"
@@ -105,7 +117,7 @@ export default function TableComponent({data}) {
                             <option value="5">5</option>
                             <option value="10">10</option>
                             <option value="15">15</option>
-                        </select>
+                        </Select>
                     </label>
                 </div>
             </div>
