@@ -7,6 +7,9 @@ import { IoIosMail } from "react-icons/io";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { useTheme} from "next-themes";
+import React from "react";
+import {Button} from "@nextui-org/button";
+import BoxReveal from ".//components/boxreveal";
 
 export default function Home() {
     const {theme} = useTheme();
@@ -29,22 +32,31 @@ export default function Home() {
                   <br/>
               </div>
               <div className="w-2/3 sm:w-full xs:w-full">
+                  <BoxReveal boxColor={"#047857"} duration={0.5}>
                   <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       Welcome to my website!
                   </h5>
+                  </BoxReveal>
+                  <BoxReveal boxColor={"#047857"} duration={0.5}>
                   <p className="font-normal text-gray-700 dark:text-gray-400">
                       My name is Mark van de Streek and I am 21 years old. I am a student at the University of Applied
                       Sciences in
                       Groningen, where I study Bioinformatics.
 
                       {/* eslint-disable-next-line react/no-unescaped-entities */}
-                      Currently, I am in my third year of the bachelor's degree. I am passionate about programming and I
+                      Currently, I am in my last year of the bachelor's degree. I am passionate about programming and I
                       am always
                       looking for new challenges.
                       <br/>
                   </p>
+                  </BoxReveal>
               </div>
           </div>
+          <p className="text-1xl font-normal text-gray-700 dark:text-gray-400">
+              Go to my <Button size={"sm"} className="text-white  hover:bg-gray-700 bg-emerald-700">Foto Blog</Button> page to watch my pictures. This is a side project of mine where I post pictures shot by me.
+          </p>
+          <hr className="w-full h-1 mx-auto my-8 bg-gray-300 border-0 rounded md:my-4 dark:bg-gray-700"/>
+          <BoxReveal boxColor={"#047857"} duration={0.5}>
           <Blockquote className={blockquoteClass}>
               I like to create software and websites that are useful and user-friendly. Additionally I enjoy researching
               biological issues or questions.
@@ -52,6 +64,7 @@ export default function Home() {
               and
               R.
           </Blockquote>
+          </BoxReveal>
           <p className="font-normal text-gray-700 dark:text-gray-400">
               This website is completely built by me. Do you want your own website or software? Feel free to contact me and discuss the possibilities!
           </p>

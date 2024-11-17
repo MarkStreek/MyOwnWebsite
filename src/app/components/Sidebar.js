@@ -14,7 +14,7 @@ export default function Sidebar() {
     return (
         <div className="h-screen bg-emerald-700 text-white w-48 space-y-6 py-7 px-2 fixed inset-y-0 left-0 overflow-auto">
             <div className="flex items-center space-x-4">
-                <Link href="/"><span className="text-2xl font-extrabold">Mark Van de Streek</span></Link>
+                <Link href="/"><span className="text-2xl font-extrabold">Mark van de Streek</span></Link>
             </div>
             <nav>
                 <ul>
