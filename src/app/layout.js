@@ -3,6 +3,8 @@ import "./globals.css";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import { Providers} from "@/app/providers";
+import clsx, { ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 const ibmPlexMono = IBM_Plex_Mono({weight: "400", style: "normal", subsets: ["latin"]});
 
@@ -10,6 +12,10 @@ export const metadata = {
   title: "Mark V/D Streeks Site",
   description: "This is the personal site of Mark V/D Streek",
 };
+
+export function cn(...inputs) {
+    return twMerge(clsx(inputs));
+}
 
 export default function RootLayout({ children }) {
   return (

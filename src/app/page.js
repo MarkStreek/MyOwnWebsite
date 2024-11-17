@@ -9,7 +9,7 @@ import { FaInstagram } from "react-icons/fa6";
 import { useTheme} from "next-themes";
 import React from "react";
 import {Button} from "@nextui-org/button";
-import BoxReveal from ".//components/boxreveal";
+import BoxReveal from "./components/boxreveal";
 
 export default function Home() {
     const {theme} = useTheme();
